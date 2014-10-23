@@ -7,8 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".LogList"
-    android:id="@+id/"
-    android:background="@drawable/button_background_x_flame_cut">
+    android:background="@drawable/log_list_background_shadowed">
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -18,8 +17,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:contentDescription="@string/life_goal_1"
+        android:layout_toStartOf="@+id/imageButton2"
+        android:background="@drawable/spirituality_button_cut"
         android:layout_toLeftOf="@+id/imageButton2"
-        android:layout_toStartOf="@+id/imageButton2" />
+        android:layout_marginRight="@dimen/button_margin" />
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -27,7 +28,10 @@
         android:id="@+id/imageButton2"
         android:contentDescription="@string/life_goal_1"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/work_button_cut"
+        android:layout_marginLeft="@dimen/button_margin"
+        android:layout_marginRight="@dimen/button_margin" />
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -37,24 +41,26 @@
         android:layout_alignTop="@+id/imageButton2"
         android:layout_toEndOf="@+id/imageButton2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/wellbeing_button_cut"
+        android:layout_marginLeft="@dimen/button_margin" />
 
     <RelativeLayout
-        android:layout_width="120dp"
-        android:layout_height="90dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_toLeftOf="@+id/imageButton3"
         android:layout_toStartOf="@+id/imageButton3"
-        android:id="@+id/relativeLayout">
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentBottom="true">
 
         <ImageButton
             android:layout_width="@dimen/log_task_button"
             android:layout_height="@dimen/log_task_button"
             android:id="@+id/imageButton5"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:contentDescription="@string/log_task_button2"
-            android:background="@drawable/log_task_button_2_cut" />
+            android:background="@drawable/log_task_button_2_cut"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
@@ -78,12 +84,15 @@
             android:background="@drawable/log_task_button_2_cut"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentEnd="false" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_alignBottom="@+id/relativeLayout2"
         android:layout_toRightOf="@+id/relativeLayout"
         android:layout_toEndOf="@+id/relativeLayout"
@@ -94,11 +103,11 @@
             android:layout_height="@dimen/log_task_button"
             android:id="@+id/imageButton6"
             android:contentDescription="@string/log_task_button3"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:adjustViewBounds="false"
-            android:background="@drawable/log_task_button_2_cut" />
+            android:background="@drawable/log_task_button_2_cut"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="false" />
     </RelativeLayout>
 
 </RelativeLayout>
