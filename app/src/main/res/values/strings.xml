@@ -4,5 +4,9 @@
     <string name="app_name">X on fire</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="life_goal_1">Life goal 1</string>
+    <string name="log_task_button1">Log Task Button 1</string>
+    <string name="log_task_button2">Log Task Button 2</string>
+    <string name="log_task_button3">Log Task Button 3</string>
 
 </resources>
