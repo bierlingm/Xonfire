@@ -7,7 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".LogList"
-    android:background="@drawable/log_list_background_shadowed">
+    android:background="@drawable/log_list_background_gray">
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -18,7 +18,7 @@
         android:layout_alignParentStart="true"
         android:contentDescription="@string/life_goal_1"
         android:layout_toStartOf="@+id/imageButton2"
-        android:background="@drawable/spirituality_button_cut"
+        android:background="@drawable/spirituality_icon_gray"
         android:layout_toLeftOf="@+id/imageButton2"
         android:layout_marginRight="@dimen/button_margin" />
 
@@ -29,7 +29,7 @@
         android:contentDescription="@string/life_goal_1"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/work_button_cut"
+        android:background="@drawable/work_icon_gray"
         android:layout_marginLeft="@dimen/button_margin"
         android:layout_marginRight="@dimen/button_margin" />
 
@@ -42,7 +42,7 @@
         android:layout_toEndOf="@+id/imageButton2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/wellbeing_button_cut"
+        android:background="@drawable/wellbeing_icon_gray"
         android:layout_marginLeft="@dimen/button_margin" />
 
     <RelativeLayout
@@ -58,7 +58,7 @@
             android:layout_height="@dimen/log_task_button"
             android:id="@+id/imageButton5"
             android:contentDescription="@string/log_task_button2"
-            android:background="@drawable/log_task_button_2_cut"
+            android:background="@drawable/log_task_button_gray"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
@@ -81,7 +81,7 @@
             android:id="@+id/imageButton4"
             android:contentDescription="@string/log_task_button2"
             android:visibility="visible"
-            android:background="@drawable/log_task_button_2_cut"
+            android:background="@drawable/log_task_button_gray"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -104,10 +104,11 @@
             android:id="@+id/imageButton6"
             android:contentDescription="@string/log_task_button3"
             android:adjustViewBounds="false"
-            android:background="@drawable/log_task_button_2_cut"
+            android:background="@drawable/log_task_button_gray"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentEnd="false" />
+            android:layout_alignParentEnd="false"
+            android:layout_marginBottom="9dp" />
     </RelativeLayout>
 
 </RelativeLayout>
