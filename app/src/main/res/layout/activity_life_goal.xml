@@ -7,7 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.xonfire.xonfire.LifeGoal"
-    android:background="#5c5c5cff">
+    android:background="#a05c5c5c">
 
     <ImageView
         android:layout_width="160dp"
@@ -16,16 +16,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:focusableInTouchMode="false" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/save_button"
-        android:id="@+id/saveButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="saveButtonClick"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,4 +70,15 @@
         android:hint ="@string/goal_desc_edit"/>
 
     </LinearLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_save_button"
+        android:id="@+id/saveButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="saveButtonClick"/>
+
 </RelativeLayout>
