@@ -28,7 +28,8 @@ public class LifeGoal extends Activity {
         if (intValue == 0) {
             imgView.setImageResource(R.drawable.spirituality_icon_gray);
             goalView.setText("Spirituality");
-            
+            EditText editTitleSpirit = (EditText) findViewById(R.id.editGoalTitle);
+
 
         };
 

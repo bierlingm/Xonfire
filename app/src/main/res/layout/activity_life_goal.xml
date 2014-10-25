@@ -21,7 +21,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save changes"
+        android:text="@string/save_button"
         android:id="@+id/saveButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -31,21 +31,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Title of Life Goal"
+        android:text="@string/goal_type"
         android:id="@+id/goalName"
         android:layout_below="@+id/lifeImageView"
         android:layout_centerHorizontal="true"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
-    <EditText
+    <LinearLayout android:id="@+id/goaltitle_block"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editGoalTitle"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:text="Enter your goal here"
-        android:textIsSelectable="false"
-        android:textSize="25dp" />
+        android:layout_below="@id/goalName"
+        android:paddingTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/goal_name"
+            android:textSize="20sp"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editGoalTitle"
+            android:hint="@string/goal_name_edit"
+            android:textIsSelectable="false"
+            android:textSize="25sp"
+            android:inputType="text" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/goaldescription_block"
+        android:layout_below="@id/goaltitle_block"
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/goal_desc"
+        android:textSize="20sp"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -53,7 +77,7 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/editGoalDescription"
-        android:layout_below="@+id/editGoalTitle"
-        android:layout_centerHorizontal="true"
-        android:text="Enter your goal description here" />
+        android:hint ="@string/goal_desc_edit"/>
+
+    </LinearLayout>
 </RelativeLayout>
