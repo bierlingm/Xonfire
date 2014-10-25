@@ -1,9 +1,17 @@
 package com.example.xonfire.xonfire;
 
 import android.app.Activity;
+import android.app.WallpaperManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 
 public class LogList extends Activity {
@@ -35,4 +43,17 @@ public class LogList extends Activity {
         startActivity(intent);
 
     }
+    public void wallPaperSave(View view){
+
+        View v = view.getRootView();
+        v.setDrawingCacheEnabled(true);
+        Bitmap b = v.getDrawingCache();
+        try {
+            WallpaperManager.getInstance(view.getContext()).setBitmap(b);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 }
