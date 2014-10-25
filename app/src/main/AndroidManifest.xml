@@ -17,9 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LifeGoal"
-            android:label="@string/title_activity_life_goal" >
+            android:name=".LogTask"
+            android:label="@string/title_activity_log_task" >
         </activity>
+        <activity android:name=".LifeGoal"
+            android:label="@string/lifeGoal_Act_Label">
+
+            </activity>
     </application>
 
 </manifest>
