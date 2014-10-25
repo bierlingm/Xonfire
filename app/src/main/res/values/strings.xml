@@ -8,5 +8,6 @@
     <string name="log_task_button1">Log Task Button 1</string>
     <string name="log_task_button2">Log Task Button 2</string>
     <string name="log_task_button3">Log Task Button 3</string>
+    <string name="title_activity_life_goal">Life Goal</string>
 
 </resources>
