@@ -70,6 +70,7 @@ public class LifeGoal extends Activity {
             Log.e(LifeGoal.class.getSimpleName(), "Error reading " + goal.getGoalType() + " goal", e);
             e.printStackTrace();
         }
+        Log.d(LifeGoal.class.getSimpleName(), goal.toString());
         EditText nameText = (EditText) findViewById(R.id.editGoalTitle);
         nameText.setText(goal.getName());
         EditText descriptionText = (EditText) findViewById(R.id.editGoalDescription);
@@ -80,6 +81,13 @@ public class LifeGoal extends Activity {
     //Save Method
     public void saveButtonClick(View view) {
         try {
+            EditText et = (EditText) view.getRootView().findViewById(R.id.editGoalTitle);
+            Log.d(LifeGoal.class.getSimpleName(), "goal is " + goal);
+            Log.d(LifeGoal.class.getSimpleName(), "et is " + et);
+            Log.d(LifeGoal.class.getSimpleName(), "et.getText is " + et.getText());
+            goal.setName(et.getText().toString());
+            et = (EditText) view.getRootView().findViewById(R.id.editGoalDescription);
+            goal.setDescription(et.getText().toString());
             goal.write();
         } catch (IOException e) {
             Log.e(LifeGoal.class.getSimpleName(), "Error writing " + goal.getGoalType() + " goal", e);
