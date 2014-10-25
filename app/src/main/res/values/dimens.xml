@@ -5,6 +5,10 @@
     <dimen name="life_goal_icon">110dp</dimen>
     <dimen name="log_task_button">90dp</dimen>
     <dimen name="button_margin">2dp</dimen>
+<<<<<<< HEAD
     <dimen name="text_lbl_size">25sp</dimen>
+=======
+    <dimen name="lbl_size">25sp</dimen>
+>>>>>>> origin/Life-Goals-Activity
 
 </resources>

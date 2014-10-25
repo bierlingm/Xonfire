@@ -12,6 +12,7 @@ public class LogList extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_list);
+<<<<<<< HEAD
     }
 
 
@@ -29,5 +30,26 @@ public class LogList extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         return super.onOptionsItemSelected(item);
+=======
+
     }
+
+    //How to not repeat ourselves?
+    public void spiritualClick(View view){
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 0);
+        startActivity(intentLifeGoal);
+    }
+    public void workClick(View view){
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 1);
+        startActivity(intentLifeGoal);
+    }
+    public void wellbeingClick(View view){
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 2);
+        startActivity(intentLifeGoal);
+>>>>>>> origin/Life-Goals-Activity
+    }
+
 }
