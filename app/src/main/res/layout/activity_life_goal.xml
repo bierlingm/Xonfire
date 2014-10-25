@@ -21,9 +21,39 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to LogList"
-        android:id="@+id/backButton"
+        android:text="Save changes"
+        android:id="@+id/saveButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="backButtonClick"/>
+        android:onClick="saveButtonClick"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Title of Life Goal"
+        android:id="@+id/goalName"
+        android:layout_below="@+id/lifeImageView"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editGoalTitle"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Enter your goal here"
+        android:textIsSelectable="false"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editGoalDescription"
+        android:layout_below="@+id/editGoalTitle"
+        android:layout_centerHorizontal="true"
+        android:text="Enter your goal description here" />
 </RelativeLayout>
