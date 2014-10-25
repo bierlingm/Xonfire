@@ -16,6 +16,7 @@
     <string name="task_desc_edit">Enter task description here</string>
 
     <!--Life goals activity strings-->
+    <string name="lifeGoal_Act_Label">Life Goal Activity</string>
     <string name="title_activity_life_goal">Life Goal</string>
     <string name="goal_type">Goal type here</string>
     <string name="goal_name">Goal name:</string>
