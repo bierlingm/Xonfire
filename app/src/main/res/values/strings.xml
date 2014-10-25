@@ -8,5 +8,11 @@
     <string name="log_task_button1">Log Task Button 1</string>
     <string name="log_task_button2">Log Task Button 2</string>
     <string name="log_task_button3">Log Task Button 3</string>
-
+    <string name="title_activity_life_goal">Life Goal</string>
+    <string name="save_button">Save changes</string>
+    <string name="goal_type">Goal type here</string>
+    <string name="goal_name">Goal name:</string>
+    <string name="goal_name_edit">Enter your goal here</string>
+    <string name="goal_desc">Goal description:</string>
+    <string name="goal_desc_edit">Enter your goal description</string>
 </resources>
