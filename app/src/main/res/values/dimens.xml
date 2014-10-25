@@ -2,7 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="life_goal_icon">120dp</dimen>
+    <dimen name="life_goal_icon">110dp</dimen>
     <dimen name="log_task_button">90dp</dimen>
+    <dimen name="button_margin">2dp</dimen>
 
 </resources>
