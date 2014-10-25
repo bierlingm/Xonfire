@@ -17,33 +17,30 @@ public class LifeGoal extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_goal);
-
-        //Get intent information from LogList Buttons
-        Intent intent = getIntent();
-        int intValue = intent.getIntExtra("intVariableName", 0);
         ImageView imgView = (ImageView) findViewById(R.id.lifeImageView);
         TextView goalView = (TextView) findViewById(R.id.goalName);
 
+        //Get intent information from LogList Buttons
+        Intent intentLifeGoal= getIntent();
+        int goalInt = intentLifeGoal.getIntExtra("lifeGoalInt", 0);
+
         //Spirituality option
-        if (intValue == 0) {
+        if (goalInt== 0) {
             imgView.setImageResource(R.drawable.spirituality_icon_gray);
             goalView.setText("Spirituality");
-            EditText editTitleSpirit = (EditText) findViewById(R.id.editGoalTitle);
-
-
-        };
+        }
 
         //Work option
-        if (intValue == 1) {
+        else if (goalInt == 1) {
             imgView.setImageResource(R.drawable.work_icon_gray);
             goalView.setText("Work");
-        };
+        }
 
-        //Wellbeing option
-        if (intValue == 2) {
+        //Well-being option
+        else if (goalInt == 2) {
             imgView.setImageResource(R.drawable.wellbeing_icon_gray);
-            goalView.setText("Wellbeing");
-        };
+            goalView.setText("Well-being");
+        }
 
     }
     //Save Method

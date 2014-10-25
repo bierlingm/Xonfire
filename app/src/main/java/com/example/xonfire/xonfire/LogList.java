@@ -15,24 +15,21 @@ public class LogList extends Activity {
 
     }
 
+    //How to not repeat ourselves?
     public void spiritualClick(View view){
-        Intent intent = new Intent(this, LifeGoal.class);
-        intent.putExtra("intVariableName", 0);
-        startActivity(intent);
-
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 0);
+        startActivity(intentLifeGoal);
     }
     public void workClick(View view){
-
-        Intent intent = new Intent(this, LifeGoal.class);
-        intent.putExtra("intVariableName", 1);
-        startActivity(intent);
-
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 1);
+        startActivity(intentLifeGoal);
     }
     public void wellbeingClick(View view){
-
-        Intent intent = new Intent(this, LifeGoal.class);
-        intent.putExtra("intVariableName", 2);
-        startActivity(intent);
-
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 2);
+        startActivity(intentLifeGoal);
     }
+
 }
