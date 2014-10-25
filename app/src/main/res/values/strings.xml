@@ -8,5 +8,10 @@
     <string name="log_task_button1">Log Task Button 1</string>
     <string name="log_task_button2">Log Task Button 2</string>
     <string name="log_task_button3">Log Task Button 3</string>
-
+    <string name="title_activity_log_task">Log Task</string>
+    <string name="task_title">Task name:</string>
+    <string name="task_title_edit">Enter task here</string>
+    <string name="task_desc">Task description:</string>
+    <string name="task_desc_edit">Enter task description here</string>
+    <string name="lbl_save_button">Save changes</string>
 </resources>
