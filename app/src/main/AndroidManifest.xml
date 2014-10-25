@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Spirituality_Activity"
+            android:label="@string/title_activity_spirituality_" >
+        </activity>
+        <activity
+            android:name=".Work_Activity"
+            android:label="@string/title_activity_work_" >
+        </activity>
+        <activity
+            android:name=".Wellbeing_Activity"
+            android:label="@string/title_activity_wellbeing_" >
+        </activity>
+        <activity
+            android:name=".logtaskone"
+            android:label="@string/title_activity_logtaskone" >
+        </activity>
+        <activity
+            android:name=".logtasktwo"
+            android:label="@string/title_activity_logtasktwo" >
+        </activity>
+        <activity
+            android:name=".logtaskthree"
+            android:label="@string/title_activity_logtaskthree" >
+        </activity>
     </application>
 
 </manifest>

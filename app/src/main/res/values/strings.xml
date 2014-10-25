@@ -8,5 +8,11 @@
     <string name="log_task_button1">Log Task Button 1</string>
     <string name="log_task_button2">Log Task Button 2</string>
     <string name="log_task_button3">Log Task Button 3</string>
+    <string name="title_activity_spirituality_">Spirituality_Activity</string>
+    <string name="title_activity_work_">Work_Activity</string>
+    <string name="title_activity_wellbeing_">Wellbeing_Activity</string>
+    <string name="title_activity_logtaskone">logtaskoneActivity</string>
+    <string name="title_activity_logtasktwo">logtasktwo</string>
+    <string name="title_activity_logtaskthree">logtaskthree</string>
 
 </resources>
