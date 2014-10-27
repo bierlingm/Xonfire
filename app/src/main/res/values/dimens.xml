@@ -5,5 +5,7 @@
     <dimen name="life_goal_icon">110dp</dimen>
     <dimen name="log_task_button">90dp</dimen>
     <dimen name="button_margin">2dp</dimen>
+    <dimen name="lbl_size">25sp</dimen>
+
 
 </resources>

@@ -5,13 +5,7 @@ import android.app.WallpaperManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 
 
 public class LogList extends Activity {
@@ -23,25 +17,22 @@ public class LogList extends Activity {
 
     }
 
-    public void spiritualClick(View view){
-        Intent intent = new Intent(this, LifeGoal.class);
-        intent.putExtra("intVariableName", 0);
-        startActivity(intent);
+    //How to not repeat ourselves?
 
+    public void spiritualClick(View view){
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 0);
+        startActivity(intentLifeGoal);
     }
     public void workClick(View view){
-
-        Intent intent = new Intent(this, LifeGoal.class);
-        intent.putExtra("intVariableName", 1);
-        startActivity(intent);
-
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 1);
+        startActivity(intentLifeGoal);
     }
     public void wellbeingClick(View view){
-
-        Intent intent = new Intent(this, LifeGoal.class);
-        intent.putExtra("intVariableName", 2);
-        startActivity(intent);
-
+        Intent intentLifeGoal = new Intent(this, LifeGoal.class);
+        intentLifeGoal.putExtra("lifeGoalInt", 2);
+        startActivity(intentLifeGoal);
     }
     public void wallPaperSave(View view){
 
@@ -56,4 +47,5 @@ public class LogList extends Activity {
         }
     }
 
+    //Need to code task buttons
 }
