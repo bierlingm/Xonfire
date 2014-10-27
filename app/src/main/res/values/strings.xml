@@ -10,10 +10,8 @@
 
     <!--Log task activity strings -->
     <string name="title_activity_log_task">Log Task</string>
-    <string name="task_title">Task name:</string>
-    <string name="task_title_edit">Enter task here</string>
-    <string name="task_desc">Task description:</string>
-    <string name="task_desc_edit">Enter task description here</string>
+    <string name="task_title">Title</string>
+    <string name="task_desc">Description</string>
     <string name="life_goal_spirituality">Spirituality Life Goal</string>
     <string name="life_goal_work">Work Life Goal</string>
     <string name="life_goal_wellbeing">Wellbeing Life Goal</string>
@@ -22,8 +20,8 @@
     <string name="lifeGoal_Act_Label">Life Goal Activity</string>
     <string name="title_activity_life_goal">Life Goal</string>
     <string name="goal_type">Goal type here</string>
-    <string name="goal_name">Title:</string>
-    <string name="goal_desc">Description:</string>
+    <string name="goal_name">Title</string>
+    <string name="goal_desc">Description</string>
 
-    <string name="lbl_save_button">Save changes</string>
+    <string name="lbl_save_button">Save it</string>
 </resources>

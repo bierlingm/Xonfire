@@ -23,7 +23,6 @@
         android:layout_height="@dimen/life_goal_icon"
         android:id="@+id/imageButton"
         android:background="@drawable/spirituality_icon_gray"
-        android:layout_toStartOf="@+id/saveButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:contentDescription="@string/life_goal_spirituality" />
@@ -38,11 +37,13 @@
         android:contentDescription="@string/life_goal_wellbeing" />
 
     <Button android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:text="@string/lbl_save_button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/taskTitle"
+        android:layout_alignEnd="@+id/taskTitle"
+        android:textSize="25dp" />
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -67,7 +68,8 @@
             android:layout_toEndOf="@+id/textView3"
             android:layout_alignBottom="@+id/textView3"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:inputType="textCapSentences" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -89,16 +91,16 @@
                 android:id="@+id/textView4" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="304dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
+                android:layout_alignParentEnd="false"
                 android:layout_below="@+id/textView4"
-                android:layout_alignParentBottom="true"
-                android:editable="false" />
+                android:layout_alignParentBottom="false"
+                android:inputType="textCapSentences" />
         </RelativeLayout>
     </RelativeLayout>
 
