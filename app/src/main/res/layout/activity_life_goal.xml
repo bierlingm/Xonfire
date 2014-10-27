@@ -25,60 +25,73 @@
         android:id="@+id/goalName"
         android:layout_below="@+id/lifeImageView"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/lbl_size" />
+        android:textSize="@dimen/lbl_size"
+        android:textColor="#ffffffff" />
 
-    <LinearLayout android:id="@+id/goaltitle_block"
-        android:layout_width="wrap_content"
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/goalName"
-        android:paddingTop="20dp"
-        android:orientation="horizontal">
+        android:text="@string/lbl_save_button"
+        android:id="@+id/saveButton"
+        android:onClick="saveButtonClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/goaldescription_block"
+        android:layout_alignEnd="@+id/goaldescription_block"
+        android:textSize="25sp"
+        android:textColor="#ffffffff" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/goaldescription_block"
+        android:layout_above="@+id/saveButton"
+        android:paddingTop="10dp"
+        android:layout_below="@id/goalName">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/goal_name"
-            android:textSize="@dimen/lbl_size"/>
+            android:textSize="@dimen/lbl_size"
+            android:id="@+id/textView2"
+            android:textColor="#ffffffff" />
+
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editGoalTitle"
-            android:hint="@string/goal_name_edit"
             android:textIsSelectable="false"
             android:textSize="25sp"
-            android:inputType="text" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/goaldescription_block"
-        android:layout_below="@id/goaltitle_block"
-        android:paddingTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/goal_desc"
-        android:textSize="@dimen/lbl_size"/>
+            android:inputType="text|textCapSentences"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editGoalDescription"
-        android:hint ="@string/goal_desc_edit"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/goal_desc"
+            android:textSize="@dimen/lbl_size"
+            android:id="@+id/textView"
+            android:layout_below="@+id/editGoalTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#ffffffff" />
 
-    </LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:id="@+id/editGoalDescription"
+            android:layout_toEndOf="@+id/goaldescription_block"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lbl_save_button"
-        android:id="@+id/saveButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="saveButtonClick"/>
+    </RelativeLayout>
 
 </RelativeLayout>

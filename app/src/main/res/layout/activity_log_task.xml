@@ -9,19 +9,6 @@
     tools:context="com.example.xonfire.xonfire.LogTask"
     android:background="#a05c5c5c">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout">
-
-    </LinearLayout>
-
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
         android:layout_height="@dimen/life_goal_icon"
@@ -29,7 +16,8 @@
         android:layout_toEndOf="@+id/imageButton"
         android:background="@drawable/work_icon_gray_110dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageButton" />
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/life_goal_spirituality" />
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -38,7 +26,7 @@
         android:background="@drawable/spirituality_icon_gray_110dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:contentDescription="@string/life_goal_spirituality" />
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -47,49 +35,70 @@
         android:layout_toEndOf="@+id/imageButton2"
         android:background="@drawable/wellbeing_icon_gray_110dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageButton2" />
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/life_goal_wellbeing" />
 
-    <LinearLayout android:id="@+id/taskTitle"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
+    <Button android:id="@+id/saveButton"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
+        android:text="@string/lbl_save_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/taskTitle"
+        android:layout_alignEnd="@+id/taskTitle"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffffff" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_below="@+id/imageButton2"
-        android:layout_marginTop="39dp">
+        android:id="@+id/taskTitle"
+        android:paddingTop="30dp"
+        android:layout_above="@+id/saveButton">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/task_title"
             android:textSize="@dimen/lbl_size"
-          />
+            android:id="@+id/textView3"
+            android:paddingTop="10dp"
+            android:textColor="#ffffffff" />
+
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/task_title_edit"/>
-        </LinearLayout>
-    <LinearLayout android:id="@+id/taskDesc"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/taskTitle"
-        android:layout_marginTop="39dp">
+            android:id="@+id/editText"
+            android:inputType="textCapSentences"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/task_desc"
             android:textSize="@dimen/lbl_size"
-            />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/task_desc_edit"/>
-    </LinearLayout>
+            android:paddingTop="20dp"
+            android:id="@+id/textView4"
+            android:textColor="#ffffffff"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <Button android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lbl_save_button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:layout_toEndOf="@+id/textView3"
+            android:inputType="textCapSentences"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
