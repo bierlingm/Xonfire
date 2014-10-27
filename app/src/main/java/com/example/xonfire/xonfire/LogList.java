@@ -35,5 +35,20 @@ public class LogList extends Activity {
         startActivity(intentLifeGoal);
     }
 
-    //Need to code task buttons
+       //Need to code task buttons
+    public void taskCenterClick(View view){
+        Intent intentTask = new Intent(this, LogTask.class);
+        intentTask.putExtra("taskInt", 0);
+        startActivity(intentTask);
+    }
+    public void taskLeftClick(View view){
+        Intent intentTask = new Intent(this, LogTask.class);
+        intentTask.putExtra("taskInt", 1);
+        startActivity(intentTask);
+    }
+    public void taskRightClick(View view){
+        Intent intentTask = new Intent(this, LogTask.class);
+        intentTask.putExtra("taskInt", 2);
+        startActivity(intentTask);
+    }
 }

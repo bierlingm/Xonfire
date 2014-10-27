@@ -61,7 +61,9 @@
             android:contentDescription="@string/log_task_button2"
             android:background="@drawable/log_task_button_gray"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:onClick="taskCenterClick"
+            />
 
     </RelativeLayout>
 
@@ -88,7 +90,9 @@
             android:layout_alignParentStart="true"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
-            android:layout_alignParentEnd="false" />
+            android:layout_alignParentEnd="false"
+            android:onClick="taskLeftClick"
+            />
     </RelativeLayout>
 
     <RelativeLayout
@@ -109,7 +113,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_alignParentEnd="false"
-            android:layout_marginBottom="9dp" />
+            android:layout_marginBottom="9dp"
+            android:onClick="taskRightClick"/>
     </RelativeLayout>
 
 </RelativeLayout>
