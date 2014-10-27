@@ -27,7 +27,7 @@
         android:layout_height="@dimen/life_goal_icon"
         android:id="@+id/imageButton2"
         android:layout_toEndOf="@+id/imageButton"
-        android:background="@drawable/work_icon_gray"
+        android:background="@drawable/work_icon_gray_110dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/imageButton" />
 
@@ -35,7 +35,7 @@
         android:layout_width="@dimen/life_goal_icon"
         android:layout_height="@dimen/life_goal_icon"
         android:id="@+id/imageButton"
-        android:background="@drawable/spirituality_icon_gray"
+        android:background="@drawable/spirituality_icon_gray_110dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -45,7 +45,7 @@
         android:layout_height="@dimen/life_goal_icon"
         android:id="@+id/imageButton3"
         android:layout_toEndOf="@+id/imageButton2"
-        android:background="@drawable/wellbeing_icon_gray"
+        android:background="@drawable/wellbeing_icon_gray_110dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/imageButton2" />
 
