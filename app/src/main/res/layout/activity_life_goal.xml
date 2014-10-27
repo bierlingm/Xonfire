@@ -25,36 +25,12 @@
         android:id="@+id/goalName"
         android:layout_below="@+id/lifeImageView"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/lbl_size" />
-
-    <LinearLayout android:id="@+id/goaltitle_block"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/goalName"
-        android:paddingTop="20dp"
-        android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/goal_name"
-            android:textSize="@dimen/lbl_size"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editGoalTitle"
-            android:textIsSelectable="false"
-            android:textSize="25sp"
-            android:inputType="text|textCapSentences" />
-    </LinearLayout>
+        android:textSize="@dimen/lbl_size"
+        android:textColor="#ffffffff" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lbl_save_button"
         android:id="@+id/saveButton"
@@ -62,25 +38,49 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/goaldescription_block"
         android:layout_alignEnd="@+id/goaldescription_block"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textColor="#ffffffff" />
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/goaltitle_block"
         android:id="@+id/goaldescription_block"
         android:layout_above="@+id/saveButton"
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:layout_below="@id/goalName">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/goal_name"
+            android:textSize="@dimen/lbl_size"
+            android:id="@+id/textView2"
+            android:textColor="#ffffffff" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editGoalTitle"
+            android:textIsSelectable="false"
+            android:textSize="25sp"
+            android:inputType="text|textCapSentences"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/goal_desc"
             android:textSize="@dimen/lbl_size"
-            android:id="@+id/textView" />
+            android:id="@+id/textView"
+            android:layout_below="@+id/editGoalTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#ffffffff" />
 
         <EditText
-            android:layout_width="304dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine|textCapSentences"
             android:id="@+id/editGoalDescription"
@@ -91,6 +91,7 @@
             android:layout_alignParentBottom="false"
             android:layout_alignParentLeft="false"
             android:layout_alignParentStart="false" />
+
     </RelativeLayout>
 
 </RelativeLayout>
