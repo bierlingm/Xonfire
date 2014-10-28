@@ -18,10 +18,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/imageButton2"
-        android:background="@drawable/spirituality_icon_gray"
+        android:background="@drawable/spirituality_icon_gray_160dp"
         android:layout_toLeftOf="@+id/imageButton2"
         android:layout_marginRight="@dimen/button_margin"
-        android:onClick="spiritualClick"/>
+        android:onClick="spiritualClick"
+        android:contentDescription="@string/life_goal_spirituality" />
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -29,10 +30,11 @@
         android:id="@+id/imageButton2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/work_icon_gray"
+        android:background="@drawable/work_icon_gray_160dp"
         android:layout_marginLeft="@dimen/button_margin"
         android:layout_marginRight="@dimen/button_margin"
-        android:onClick="workClick"/>
+        android:onClick="workClick"
+        android:contentDescription="@string/life_goal_work" />
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -42,9 +44,10 @@
         android:layout_toEndOf="@+id/imageButton2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/wellbeing_icon_gray"
+        android:background="@drawable/wellbeing_icon_gray_160dp"
         android:layout_marginLeft="@dimen/button_margin"
-        android:onClick="wellbeingClick"/>
+        android:onClick="wellbeingClick"
+        android:contentDescription="@string/life_goal_wellbeing" />
 
     <RelativeLayout
         android:layout_width="110dp"
@@ -115,6 +118,7 @@
             android:layout_alignParentEnd="false"
             android:layout_marginBottom="9dp"
             android:onClick="taskRightClick"/>
+
     </RelativeLayout>
 
 </RelativeLayout>
