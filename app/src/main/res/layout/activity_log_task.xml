@@ -94,7 +94,7 @@
             android:id="@+id/editText3"
             android:layout_toEndOf="@+id/textView3"
             android:inputType="textCapSentences"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/textView4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
