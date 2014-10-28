@@ -23,5 +23,7 @@
     <string name="goal_name">Title</string>
     <string name="goal_desc">Description</string>
 
+    <!--Multiple use strings-->
     <string name="lbl_save_button">Save it</string>
+
 </resources>

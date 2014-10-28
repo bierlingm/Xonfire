@@ -1,10 +1,10 @@
 package com.example.xonfire.xonfire;
 
 import android.app.Activity;
+import android.app.WallpaperManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 
@@ -33,6 +33,18 @@ public class LogList extends Activity {
         Intent intentLifeGoal = new Intent(this, LifeGoal.class);
         intentLifeGoal.putExtra("lifeGoalInt", 2);
         startActivity(intentLifeGoal);
+    }
+    public void wallPaperSave(View view){
+
+        View v = view.getRootView();
+        v.setDrawingCacheEnabled(true);
+        Bitmap b = v.getDrawingCache();
+        try {
+            WallpaperManager.getInstance(view.getContext()).setBitmap(b);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
        //Need to code task buttons

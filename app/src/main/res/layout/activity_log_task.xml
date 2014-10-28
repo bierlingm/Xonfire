@@ -13,11 +13,10 @@
         android:layout_width="@dimen/life_goal_icon"
         android:layout_height="@dimen/life_goal_icon"
         android:id="@+id/imageButton2"
-        android:layout_toEndOf="@+id/imageButton"
         android:src="@drawable/work_icon_gray_110dp"
+        android:contentDescription="@string/life_goal_spirituality"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/life_goal_spirituality" />
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
@@ -32,11 +31,11 @@
         android:layout_width="@dimen/life_goal_icon"
         android:layout_height="@dimen/life_goal_icon"
         android:id="@+id/imageButton3"
-        android:layout_toEndOf="@+id/imageButton2"
         android:src="@drawable/wellbeing_icon_gray_110dp"
-        android:layout_alignParentTop="true"
+        android:contentDescription="@string/life_goal_wellbeing"
+        android:layout_above="@+id/taskTitle"
         android:layout_alignParentRight="true"
-        android:contentDescription="@string/life_goal_wellbeing" />
+        android:layout_alignParentEnd="true" />
 
     <Button android:id="@+id/saveButton"
         android:layout_width="130dp"
