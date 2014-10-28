@@ -74,9 +74,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/relativeLayout"
-        android:layout_toLeftOf="@+id/imageButton2"
         android:id="@+id/relativeLayout2"
-        android:layout_below="@+id/imageButton">
+        android:layout_alignRight="@+id/imageButton"
+        android:layout_alignEnd="@+id/imageButton">
 
         <ImageButton
             android:layout_width="@dimen/log_task_button"
@@ -99,9 +99,10 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_alignBottom="@+id/relativeLayout2"
-        android:layout_toRightOf="@+id/relativeLayout"
         android:layout_toEndOf="@+id/relativeLayout"
-        android:layout_below="@+id/imageButton3">
+        android:layout_alignTop="@+id/relativeLayout2"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_alignStart="@+id/imageButton3">
 
         <ImageButton
             android:layout_width="@dimen/log_task_button"
