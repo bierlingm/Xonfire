@@ -57,8 +57,9 @@ public class LifeGoal extends Activity {
             imgView.setImageResource(R.drawable.wellbeing_icon_gray);
             goalType = "Well-being";
             goalView.setText(goalType);
-
         }
+
+        //Data persistence for goal information
         goal = new Goal(this);
         goal.setGoalType(goalType);
         try {
