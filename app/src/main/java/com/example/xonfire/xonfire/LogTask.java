@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 public class LogTask extends Activity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_task);
 
@@ -27,10 +27,10 @@ public class LogTask extends Activity {
                 /*The button was clicked, so remove borders to other buttons, add a border to this one,
                 change the variable to be equal to 0.
                  */
-                workBtn.setBackgroundResource(R.drawable.noborder);
-                heartBtn.setBackgroundResource(R.drawable.noborder);
+                workBtn.
+                heartBtn.
                 spiritBtn.setBackgroundResource(R.drawable.border);
-
+            
             }
         };
         spiritBtn.setOnClickListener(spiritListener);
