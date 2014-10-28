@@ -27,13 +27,43 @@ public class LogTask extends Activity {
                 /*The button was clicked, so remove borders to other buttons, add a border to this one,
                 change the variable to be equal to 0.
                  */
-                workBtn.
-                heartBtn.
+                workBtn.setBackgroundResource(R.drawable.border_trans);
+                heartBtn.setBackgroundResource(R.drawable.border_trans);
                 spiritBtn.setBackgroundResource(R.drawable.border);
             
             }
         };
         spiritBtn.setOnClickListener(spiritListener);
+
+        //Work Button option
+        View.OnClickListener workListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*The button was clicked, so remove borders to other buttons, add a border to this one,
+                change the variable to be equal to 0.
+                 */
+                workBtn.setBackgroundResource(R.drawable.border);
+                heartBtn.setBackgroundResource(R.drawable.border_trans);
+                spiritBtn.setBackgroundResource(R.drawable.border_trans);
+
+            }
+        };
+        workBtn.setOnClickListener(workListener);
+
+        //Heart Button option
+        View.OnClickListener heartListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*The button was clicked, so remove borders to other buttons, add a border to this one,
+                change the variable to be equal to 0.
+                 */
+                workBtn.setBackgroundResource(R.drawable.border_trans);
+                heartBtn.setBackgroundResource(R.drawable.border);
+                spiritBtn.setBackgroundResource(R.drawable.border_trans);
+
+            }
+        };
+        heartBtn.setOnClickListener(heartListener);
     }
 
 
