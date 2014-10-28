@@ -40,14 +40,13 @@
         android:layout_width="@dimen/life_goal_icon"
         android:layout_height="@dimen/life_goal_icon"
         android:id="@+id/imageButton3"
-        android:layout_alignTop="@+id/imageButton2"
         android:layout_toEndOf="@+id/imageButton2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:background="@drawable/wellbeing_icon_gray_160dp"
-        android:layout_marginLeft="@dimen/button_margin"
         android:onClick="wellbeingClick"
-        android:contentDescription="@string/life_goal_wellbeing" />
+        android:contentDescription="@string/life_goal_wellbeing"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false" />
 
     <RelativeLayout
         android:layout_width="110dp"

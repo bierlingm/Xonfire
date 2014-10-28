@@ -55,7 +55,8 @@ public class LifeGoal extends Activity {
         //Well-being option
         else if (goalInt == 2) {
             imgView.setImageResource(R.drawable.wellbeing_icon_gray);
-            goalType = "Well-being";
+            goalType = "Well" +
+                    "being";
             goalView.setText(goalType);
         }
 
