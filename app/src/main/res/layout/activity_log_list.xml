@@ -18,7 +18,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/imageButton2"
-        android:background="@drawable/spirituality_icon_gray"
+        android:background="@drawable/spirituality_icon_gray_160dp"
         android:layout_toLeftOf="@+id/imageButton2"
         android:layout_marginRight="@dimen/button_margin"
         android:onClick="spiritualClick"/>
@@ -29,7 +29,7 @@
         android:id="@+id/imageButton2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/work_icon_gray"
+        android:background="@drawable/work_icon_gray_160dp"
         android:layout_marginLeft="@dimen/button_margin"
         android:layout_marginRight="@dimen/button_margin"
         android:onClick="workClick"/>
@@ -42,7 +42,7 @@
         android:layout_toEndOf="@+id/imageButton2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/wellbeing_icon_gray"
+        android:background="@drawable/wellbeing_icon_gray_160dp"
         android:layout_marginLeft="@dimen/button_margin"
         android:onClick="wellbeingClick"/>
 
