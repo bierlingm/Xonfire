@@ -57,7 +57,7 @@ public class LogTask extends Activity {
         } else if (Task.WELL_BEING.equalsIgnoreCase(task.getTaskType())) {
             selectedButton = wellbeingButton;
         }
-        Log.d("TAG", "Setting border for button corresponding to " +task.getTaskType() + " using button " + selectedButton.getId());
+        Log.d("TAG", "Setting border for button corresponding to " + task.getTaskType() + " using button " + selectedButton.getId());
         selectedButton.setBackgroundResource(R.drawable.border);
         //Spirit Button option
         View.OnClickListener goalTypeListener = new View.OnClickListener() {
@@ -107,6 +107,9 @@ public class LogTask extends Activity {
             Log.e(LogTask.class.getSimpleName(), "Error writing " + task.getTaskType() + " goal", e);
             e.printStackTrace();
         }
+        Intent data = new Intent();
+        data.putExtra("taskTypeSelected", task.getTaskType());
+        setResult(task.getTaskButtonNumber(), data);
         finish();
     }
 }

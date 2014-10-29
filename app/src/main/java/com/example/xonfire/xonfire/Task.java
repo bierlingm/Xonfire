@@ -1,5 +1,6 @@
 package com.example.xonfire.xonfire;
 
+import android.app.Activity;
 import android.util.Log;
 
 import java.io.FileInputStream;
@@ -21,10 +22,10 @@ public class Task implements Serializable {
     private String taskType;
     private int taskButtonNumber;
 
-    private transient LogTask logTask;
+    private transient Activity actvitiy;
 
-    public Task(LogTask logTask) {
-        this.logTask = logTask;
+    public Task(Activity act) {
+        this.actvitiy = act;
     }
 
 
@@ -62,7 +63,7 @@ public class Task implements Serializable {
 
     public void read() throws IOException, ClassNotFoundException {
         Log.d(Goal.class.getSimpleName(),"Reading Task");
-        FileInputStream fis = logTask.openFileInput(LogTask.FILENAME + "_" + taskButtonNumber);
+        FileInputStream fis = actvitiy.openFileInput(LogTask.FILENAME + "_" + taskButtonNumber);
         ObjectInputStream ois = new ObjectInputStream(fis);
         Task newTask = (Task) ois.readObject();
         fis.close();
@@ -76,7 +77,7 @@ public class Task implements Serializable {
     public void write() throws IOException {
         String filename = LogTask.FILENAME + "_" + taskButtonNumber;
         Log.d(Goal.class.getSimpleName(),"Writing " + toString() + " to file '" +filename + "'");
-        FileOutputStream fos = logTask.openFileOutput(filename, LogTask.MODE_PRIVATE);
+        FileOutputStream fos = actvitiy.openFileOutput(filename, LogTask.MODE_PRIVATE);
 
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this);
