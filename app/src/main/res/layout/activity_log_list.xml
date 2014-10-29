@@ -10,6 +10,7 @@
     android:background="@drawable/log_list_background_red_white_triangular_flame"
     android:onClick="wallPaperSave">
 
+
     <ImageButton
         android:layout_width="@dimen/life_goal_icon"
         android:layout_height="@dimen/life_goal_icon"
