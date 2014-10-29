@@ -38,6 +38,7 @@ public class LogTask extends Activity {
         task.setTaskButtonNumber(taskInt);
         try {
             task.read();
+            task.setDone(false);// it should be no longer done
         } catch (IOException e) {
             Log.e(LogTask.class.getSimpleName(), "Error reading task", e);
             e.printStackTrace();

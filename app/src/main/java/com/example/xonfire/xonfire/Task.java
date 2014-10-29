@@ -80,6 +80,7 @@ public class Task implements Serializable {
         this.setName(newTask.getName());
         this.setDescription(newTask.getDescription());
         this.setTaskType(newTask.getTaskType());
+        this.setDone(newTask.isDone());
 
     }
 
@@ -99,6 +100,7 @@ public class Task implements Serializable {
                 ", description='" + description + '\'' +
                 ", taskType='" + taskType + '\'' +
                 ", taskButtonNumber=" + taskButtonNumber +
+                ", done=" + done +
                 '}';
     }
 }

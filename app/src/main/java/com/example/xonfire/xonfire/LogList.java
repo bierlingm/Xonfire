@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class LogList extends Activity {
@@ -21,7 +22,21 @@ public class LogList extends Activity {
         setContentView(R.layout.activity_log_list);
         tasksArray = readAllTasksIntoArray();
         setTaskButtonsImages();
+        addLongClickToTasks(0);
+        addLongClickToTasks(1);
+        addLongClickToTasks(2);
+    }
 
+    private void addLongClickToTasks(final int buttonNumber) {
+        getTaskImageButton(buttonNumber).setLongClickable(true);
+        getTaskImageButton(buttonNumber).setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View view) {
+                startTaskActivity(buttonNumber);
+                return false;
+            }
+        });
     }
 
     private Task[] readAllTasksIntoArray() {
@@ -44,9 +59,9 @@ public class LogList extends Activity {
     }
 
     private void setTaskButtonsImages() {
-        getTaskImageButton(0).setBackgroundResource(getGoalIconSmall(0));
-        getTaskImageButton(1).setBackgroundResource(getGoalIconSmall(1));
-        getTaskImageButton(2).setBackgroundResource(getGoalIconSmall(2));
+        if (getGoalIconSmall(0) != 0) getTaskImageButton(0).setBackgroundResource(getGoalIconSmall(0));
+        if (getGoalIconSmall(1) != 0) getTaskImageButton(1).setBackgroundResource(getGoalIconSmall(1));
+        if (getGoalIconSmall(2) != 0) getTaskImageButton(2).setBackgroundResource(getGoalIconSmall(2));
     }
 
 
@@ -99,32 +114,43 @@ public class LogList extends Activity {
 
     private void clickOnTask(int value) {
         if (tasksArray[value].getTaskType() == null) {
-            Intent intentTask = new Intent(this, LogTask.class);
-            intentTask.putExtra("taskInt", value);
-            startActivityForResult(intentTask, 1);
+            startTaskActivity(value);
 
         } else {
             if (!tasksArray[value].isDone()) {
                 tasksArray[value].setDone(true);
-                getTaskImageButton(value).setImageResource(getGoalIconSmall(value));
+                try {
+                    tasksArray[value].write();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                int goalIconSmall = getGoalIconSmall(value);
+                if(goalIconSmall != 0) getTaskImageButton(value).setBackgroundResource(goalIconSmall);
             }
         }
+    }
+
+    private void startTaskActivity(int value) {
+        Intent intentTask = new Intent(this, LogTask.class);
+        intentTask.putExtra("taskInt", value);
+        startActivityForResult(intentTask, 1);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1) {
-
+        if (requestCode == 1 && data != null) {
+            tasksArray = readAllTasksIntoArray();
+            Log.d(LogList.class.getSimpleName(), "Tasks reloaded:" + Arrays.asList(tasksArray));
             ImageButton imgButton = getTaskImageButton(resultCode);
 
             // set the image resource id
             String taskType = data.getStringExtra("taskTypeSelected");
             Log.d(LogList.class.getSimpleName(), "onActivityResult resultCode=" + resultCode + ", taskType='" + taskType + "'");
 
-            int imageResourceId = getGoalIconSmall(taskType);
-            imgButton.setBackgroundResource(imageResourceId);
+            int imageResourceId = getGoalIconSmall(resultCode);
+            if (imageResourceId != 0) imgButton.setBackgroundResource(imageResourceId);
         }
     }
 
@@ -139,8 +165,10 @@ public class LogList extends Activity {
         }
     }
     private int getGoalIconSmall(String taskType) {
-        int imageResourceId = R.drawable.spirituality_icon_gray_110dp;
-        if (Task.WORK.equals(taskType)) {
+        int imageResourceId = 0;
+        if (Task.SPIRITUALITY.equals(taskType)) {
+            imageResourceId = R.drawable.spirituality_icon_gray_110dp;
+        } else if (Task.WORK.equals(taskType)) {
             imageResourceId = R.drawable.work_icon_gray_110dp;
         } else if (Task.WELL_BEING.equals(taskType)) {
             imageResourceId = R.drawable.wellbeing_icon_gray_110dp;
@@ -149,8 +177,10 @@ public class LogList extends Activity {
     }
 
     private int getGoalIconSmallRed(String taskType) {
-        int imageResourceId = R.drawable.spirituality_icon_red_white;
-        if (Task.WORK.equals(taskType)) {
+        int imageResourceId = 0;
+        if (Task.SPIRITUALITY.equals(taskType)) {
+            imageResourceId = R.drawable.spirituality_icon_red_white;
+        } else if (Task.WORK.equals(taskType)) {
             imageResourceId = R.drawable.work_icon_red_white;
         } else if (Task.WELL_BEING.equals(taskType)) {
             imageResourceId = R.drawable.wellbeing_icon_red_white;
