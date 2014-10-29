@@ -90,8 +90,3 @@ public class LifeGoal extends Activity {
     }
 
 }
-  //fix save for task
-    //add finish
-    // fix wallpaper
-
-
