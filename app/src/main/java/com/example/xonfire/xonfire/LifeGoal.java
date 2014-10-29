@@ -4,21 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 public class LifeGoal extends Activity {
 
@@ -40,21 +31,21 @@ public class LifeGoal extends Activity {
         String goalType = null;
         //Spirituality option
         if (goalInt == 0) {
-            imgView.setImageResource(R.drawable.spirituality_icon_gray);
+            imgView.setImageResource(R.drawable.spirituality_icon_gray_160dp);
             goalType = "Spirituality";
             goalView.setText(goalType);
         }
 
         //Work option
         else if (goalInt == 1) {
-            imgView.setImageResource(R.drawable.work_icon_gray);
+            imgView.setImageResource(R.drawable.work_icon_gray_160dp);
             goalType = "Work";
             goalView.setText(goalType);
         }
 
         //Well-being option
         else if (goalInt == 2) {
-            imgView.setImageResource(R.drawable.wellbeing_icon_gray);
+            imgView.setImageResource(R.drawable.wellbeing_icon_gray_160dp);
             goalType = "Wellbeing";
             goalView.setText(goalType);
         }
@@ -94,9 +85,13 @@ public class LifeGoal extends Activity {
             Log.e(LifeGoal.class.getSimpleName(), "Error writing " + goal.getGoalType() + " goal", e);
             e.printStackTrace();
         }
+        finish();
 
     }
 
 }
+  //fix save for task
+    //add finish
+    // fix wallpaper
 
 

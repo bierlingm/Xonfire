@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class LogList extends Activity {
@@ -45,6 +46,7 @@ public class LogList extends Activity {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        Toast.makeText(this, "Wallpaper set", Toast.LENGTH_SHORT).show();
     }
 
        //Need to code task buttons
