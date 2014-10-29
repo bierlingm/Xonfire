@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/app_icon_gray_triangular_flame_white_bitmap"
+        android:icon="@drawable/app_icon_red_white_triangular_flame_gray_background"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
