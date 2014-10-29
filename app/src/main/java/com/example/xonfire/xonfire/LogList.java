@@ -14,16 +14,17 @@ import java.io.IOException;
 
 
 public class LogList extends Activity {
-
+    Task[] tasksArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_list);
+        tasksArray = readAllTasksIntoArray();
         setTaskButtonsImages();
 
     }
 
-    private void setTaskButtonsImages() {
+    private Task[] readAllTasksIntoArray() {
         Task leftButtonTask = new Task(this);
         leftButtonTask.setTaskButtonNumber(0);
         Task centerButtonTask = new Task(this);
@@ -39,33 +40,37 @@ public class LogList extends Activity {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        ImageButton leftButton = getTaskImageButton(0);
-        Log.d(LogList.class.getSimpleName(), "leftButton:" + leftButton + ", leftButtonTask:" + leftButtonTask);
-        leftButton.setBackgroundResource(getGoalIconSmall(leftButtonTask.getTaskType()));
-        ImageButton centerButton = getTaskImageButton(1);
-        centerButton.setBackgroundResource(getGoalIconSmall(centerButtonTask.getTaskType()));
-        ImageButton rightButton = getTaskImageButton(2);
-        rightButton.setBackgroundResource(getGoalIconSmall(rightButtonTask.getTaskType()));
+        return new Task[] {leftButtonTask, centerButtonTask, rightButtonTask};
     }
+
+    private void setTaskButtonsImages() {
+        getTaskImageButton(0).setBackgroundResource(getGoalIconSmall(0));
+        getTaskImageButton(1).setBackgroundResource(getGoalIconSmall(1));
+        getTaskImageButton(2).setBackgroundResource(getGoalIconSmall(2));
+    }
+
 
     //How to not repeat ourselves?
 
-    public void spiritualClick(View view){
+    public void spiritualClick(View view) {
         Intent intentLifeGoal = new Intent(this, LifeGoal.class);
         intentLifeGoal.putExtra("lifeGoalInt", 0);
         startActivity(intentLifeGoal);
     }
-    public void workClick(View view){
+
+    public void workClick(View view) {
         Intent intentLifeGoal = new Intent(this, LifeGoal.class);
         intentLifeGoal.putExtra("lifeGoalInt", 1);
         startActivity(intentLifeGoal);
     }
-    public void wellbeingClick(View view){
+
+    public void wellbeingClick(View view) {
         Intent intentLifeGoal = new Intent(this, LifeGoal.class);
         intentLifeGoal.putExtra("lifeGoalInt", 2);
         startActivity(intentLifeGoal);
     }
-    public void wallPaperSave(View view){
+
+    public void wallPaperSave(View view) {
 
         View v = view.getRootView();
         v.setDrawingCacheEnabled(true);
@@ -79,23 +84,31 @@ public class LogList extends Activity {
         Toast.makeText(this, "Wallpaper set", Toast.LENGTH_SHORT).show();
     }
 
-       //Need to code task buttons
-    public void taskLeftClick(View view){
-        startTaskActivity(0);
+    //Need to code task buttons
+    public void taskLeftClick(View view) {
+        clickOnTask(0);
     }
 
-    public void taskCenterClick(View view){
-        startTaskActivity(1);
+    public void taskCenterClick(View view) {
+        clickOnTask(1);
     }
 
-    public void taskRightClick(View view){
-        startTaskActivity(2);
+    public void taskRightClick(View view) {
+        clickOnTask(2);
     }
 
-    private void startTaskActivity(int value) {
-        Intent intentTask = new Intent(this, LogTask.class);
-        intentTask.putExtra("taskInt", value);
-        startActivityForResult(intentTask, 1);
+    private void clickOnTask(int value) {
+        if (tasksArray[value].getTaskType() == null) {
+            Intent intentTask = new Intent(this, LogTask.class);
+            intentTask.putExtra("taskInt", value);
+            startActivityForResult(intentTask, 1);
+
+        } else {
+            if (!tasksArray[value].isDone()) {
+                tasksArray[value].setDone(true);
+                getTaskImageButton(value).setImageResource(getGoalIconSmall(value));
+            }
+        }
     }
 
     @Override
@@ -108,16 +121,23 @@ public class LogList extends Activity {
 
             // set the image resource id
             String taskType = data.getStringExtra("taskTypeSelected");
-            Log.d(LogList.class.getSimpleName(), "onActivityResult resultCode=" + resultCode + ", taskType='"+taskType + "'");
+            Log.d(LogList.class.getSimpleName(), "onActivityResult resultCode=" + resultCode + ", taskType='" + taskType + "'");
 
             int imageResourceId = getGoalIconSmall(taskType);
             imgButton.setBackgroundResource(imageResourceId);
         }
     }
 
-//    private int getGoalIconBig(String taskType) {
+    //    private int getGoalIconBig(String taskType) {
 //        return
 //    }
+    private int getGoalIconSmall(int buttonNumber) {
+        if (tasksArray[buttonNumber].isDone()) {
+            return getGoalIconSmallRed(tasksArray[buttonNumber].getTaskType());
+        } else {
+            return getGoalIconSmall(tasksArray[buttonNumber].getTaskType());
+        }
+    }
     private int getGoalIconSmall(String taskType) {
         int imageResourceId = R.drawable.spirituality_icon_gray_110dp;
         if (Task.WORK.equals(taskType)) {
@@ -127,6 +147,17 @@ public class LogList extends Activity {
         }
         return imageResourceId;
     }
+
+    private int getGoalIconSmallRed(String taskType) {
+        int imageResourceId = R.drawable.spirituality_icon_red_white;
+        if (Task.WORK.equals(taskType)) {
+            imageResourceId = R.drawable.work_icon_red_white;
+        } else if (Task.WELL_BEING.equals(taskType)) {
+            imageResourceId = R.drawable.wellbeing_icon_red_white;
+        }
+        return imageResourceId;
+    }
+
 
     private ImageButton getTaskImageButton(int buttonNumber) {
         // set the clicked task button
@@ -140,4 +171,6 @@ public class LogList extends Activity {
         }
         return imgButton;
     }
+
+
 }

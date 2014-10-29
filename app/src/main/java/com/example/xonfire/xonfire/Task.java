@@ -21,6 +21,7 @@ public class Task implements Serializable {
     private String description;
     private String taskType;
     private int taskButtonNumber;
+    private boolean done;
 
     private transient Activity actvitiy;
 
@@ -59,6 +60,14 @@ public class Task implements Serializable {
 
     public void setTaskButtonNumber(int taskButtonNumber) {
         this.taskButtonNumber = taskButtonNumber;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 
     public void read() throws IOException, ClassNotFoundException {
