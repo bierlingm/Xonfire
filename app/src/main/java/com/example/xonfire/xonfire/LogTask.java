@@ -52,9 +52,9 @@ public class LogTask extends Activity {
         descriptionText.setText(task.getDescription());
         // set selected button Setting border for button corresponding to Work using button 2131034130
         ImageButton selectedButton = spiritualButton;
-        if (task.getTaskType() == Task.WORK) {
+        if (Task.WORK.equalsIgnoreCase(task.getTaskType())) {
             selectedButton = workButton;
-        } else if (task.getTaskType() == Task.WELL_BEING) {
+        } else if (Task.WELL_BEING.equalsIgnoreCase(task.getTaskType())) {
             selectedButton = wellbeingButton;
         }
         Log.d("TAG", "Setting border for button corresponding to " +task.getTaskType() + " using button " + selectedButton.getId());
