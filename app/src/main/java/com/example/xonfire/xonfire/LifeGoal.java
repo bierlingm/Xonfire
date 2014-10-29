@@ -40,25 +40,26 @@ public class LifeGoal extends Activity {
         String goalType = null;
         //Spirituality option
         if (goalInt == 0) {
-            imgView.setImageResource(R.drawable.spirituality_icon_gray);
+            imgView.setImageResource(R.drawable.spirituality_icon_gray_160dp);
             goalType = "Spirituality";
             goalView.setText(goalType);
         }
 
         //Work option
         else if (goalInt == 1) {
-            imgView.setImageResource(R.drawable.work_icon_gray);
+            imgView.setImageResource(R.drawable.work_icon_gray_160dp);
             goalType = "Work";
             goalView.setText(goalType);
         }
 
         //Well-being option
         else if (goalInt == 2) {
-            imgView.setImageResource(R.drawable.wellbeing_icon_gray);
-            goalType = "Well-being";
+            imgView.setImageResource(R.drawable.wellbeing_icon_gray_160dp);
+            goalType = "Wellbeing";
             goalView.setText(goalType);
-
         }
+
+        //Data persistence for goal information
         goal = new Goal(this);
         goal.setGoalType(goalType);
         try {
@@ -93,9 +94,13 @@ public class LifeGoal extends Activity {
             Log.e(LifeGoal.class.getSimpleName(), "Error writing " + goal.getGoalType() + " goal", e);
             e.printStackTrace();
         }
+        finish();
 
     }
 
 }
+  //fix save for task
+    //add finish
+    // fix wallpaper
 
 

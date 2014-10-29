@@ -1,11 +1,12 @@
 package com.example.xonfire.xonfire;
 
 import android.app.Activity;
+import android.app.WallpaperManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class LogList extends Activity {
@@ -34,6 +35,34 @@ public class LogList extends Activity {
         intentLifeGoal.putExtra("lifeGoalInt", 2);
         startActivity(intentLifeGoal);
     }
+    public void wallPaperSave(View view){
 
-    //Need to code task buttons
+        View v = view.getRootView();
+        v.setDrawingCacheEnabled(true);
+        Bitmap b = v.getDrawingCache();
+        try {
+            WallpaperManager.getInstance(view.getContext()).setBitmap(b);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Toast.makeText(this, "Wallpaper set", Toast.LENGTH_SHORT).show();
+    }
+
+       //Need to code task buttons
+    public void taskCenterClick(View view){
+        Intent intentTask = new Intent(this, LogTask.class);
+        intentTask.putExtra("taskInt", 0);
+        startActivity(intentTask);
+    }
+    public void taskLeftClick(View view){
+        Intent intentTask = new Intent(this, LogTask.class);
+        intentTask.putExtra("taskInt", 1);
+        startActivity(intentTask);
+    }
+    public void taskRightClick(View view){
+        Intent intentTask = new Intent(this, LogTask.class);
+        intentTask.putExtra("taskInt", 2);
+        startActivity(intentTask);
+    }
 }

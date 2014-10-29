@@ -13,6 +13,9 @@ import java.io.Serializable;
  * Created by Kien Truong on 10/29/2014.
  */
 public class Task implements Serializable {
+    public static final String WELL_BEING = "Well-being";
+    public static final String WORK = "Work";
+    public static final String SPIRITUALITY = "Spirituality";
     private String name;
     private String description;
     private String taskType;
@@ -66,6 +69,7 @@ public class Task implements Serializable {
         ois.close();
         this.setName(newTask.getName());
         this.setDescription(newTask.getDescription());
+        this.setTaskType(newTask.getTaskType());
 
     }
 
